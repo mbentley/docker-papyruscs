@@ -1,5 +1,15 @@
-FROM ubuntu:18.04
+# start from base image & upgrade all packages
+FROM ubuntu:18.04 AS base
 MAINTAINER Matt Bentley <mbentley@mbentley.net>
+
+RUN apt-get update &&\
+  apt-get upgrade -y &&\
+  apt-get dist-upgrade -y &&\
+   rm -rf /var/lib/apt/lists/*
+
+# copy over the contents into a new image and add my customizations
+FROM scratch
+COPY --from=base / /
 
 RUN apt-get update &&\
   apt-get install -y libgdiplus libc6-dev unzip wget &&\
