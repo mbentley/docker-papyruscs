@@ -4,8 +4,7 @@ MAINTAINER Matt Bentley <mbentley@mbentley.net>
 
 RUN apt-get update &&\
   apt-get upgrade -y &&\
-  apt-get dist-upgrade -y &&\
-   rm -rf /var/lib/apt/lists/*
+  rm -rf /var/lib/apt/lists/*
 
 # copy over the contents into a new image and add my customizations
 FROM scratch
