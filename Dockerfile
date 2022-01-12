@@ -1,6 +1,9 @@
 # stage 0 - build papyruscs from master
 FROM mcr.microsoft.com/dotnet/sdk:3.1-bionic AS build
 
+# cache busting
+ARG LAST_COMMIT
+
 RUN apt-get update &&\
   apt-get install -y unzip wget &&\
   cd /tmp &&\
