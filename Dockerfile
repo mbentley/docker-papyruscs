@@ -32,6 +32,7 @@ RUN apt-get update &&\
   rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /tmp/papyruscs/PapyrusCs/bin/Debug/netcoreapp3.1/linux-x64/publish/ /opt/papyruscs/
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 
 ENTRYPOINT ["/opt/papyruscs/PapyrusCs"]
 CMD ["--help"]
