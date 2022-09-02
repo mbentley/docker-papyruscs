@@ -23,7 +23,7 @@ RUN apt-get update &&\
 
 # stage 1 - runtime image for papyruscs
 # rebased/repackaged base image that only updates existing packages
-FROM mbentley/ubuntu:18.04
+FROM mbentley/ubuntu:20.04
 LABEL maintainer="Matt Bentley <mbentley@mbentley.net>"
 
 RUN apt-get update &&\
