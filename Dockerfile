@@ -15,7 +15,7 @@ RUN apt-get update &&\
   chmod +x PapyrusCs &&\
   cd /tmp &&\
   wget -q -O "texturepack.zip" "$(if [ -z "${TEXTURE_PACK}" ]; then wget -q -O - https://api.github.com/repos/Mojang/bedrock-samples/releases/latest | jq -r .zipball_url; else echo "${TEXTURE_PACK}"; fi)" &&\
-  unzip texturepack.zip &&\
+  unzip -q texturepack.zip &&\
   rm -rf /tmp/papyruscs/PapyrusCs/bin/Debug/netcoreapp3.1/linux-x64/publish/textures/* &&\
   mv /tmp/Mojang-bedrock-samples-*/resource_pack/textures/terrain_texture.json /tmp/papyruscs/PapyrusCs/bin/Debug/netcoreapp3.1/linux-x64/publish/textures/ &&\
   mv /tmp/Mojang-bedrock-samples-*/resource_pack/textures/blocks /tmp/papyruscs/PapyrusCs/bin/Debug/netcoreapp3.1/linux-x64/publish/textures/
