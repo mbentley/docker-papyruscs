@@ -1,5 +1,7 @@
 # mbentley/papyruscs
 
+This image is no longer being built but this repo is being kept around for archival purposes.
+
 docker image for [papyruscs](https://github.com/mjungnickel18/papyruscs)
 based off of ubuntu:18.04
 
